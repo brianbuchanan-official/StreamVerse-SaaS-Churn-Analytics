@@ -1,5 +1,3 @@
-
-```md
 # 📊 StreamVerse — SaaS Customer Churn & Revenue Analytics Dashboard
 
 ![Dashboard Preview](assets/StreamVerse_Dashboard.png)
