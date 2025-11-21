@@ -1,205 +1,259 @@
 
-# 📊 **StreamVerse — SaaS Customer Churn & Revenue Analytics Dashboard**
-
-**Excel + Power BI | End-to-End Data Analytics Project**
-
-🔗 **Portfolio:** [https://brianbuchanan-official.github.io/](https://brianbuchanan-official.github.io/)
-🔗 **LinkedIn:** [https://www.linkedin.com/in/brian-buchanan-616727224/](https://www.linkedin.com/in/brian-buchanan-616727224/)
-
----
-
-## 🛠️ **Tech Stack & Tools**
-
-![Power BI](https://img.shields.io/badge/Power%20BI-FAE500?style=for-the-badge\&logo=Power%20BI\&logoColor=black)
-![Excel](https://img.shields.io/badge/Excel-217346?style=for-the-badge\&logo=Microsoft%20Excel\&logoColor=white)
-![DAX](https://img.shields.io/badge/DAX-0E76A8?style=for-the-badge\&logo=Microsoft%20PowerBI\&logoColor=white)
-![Data Analytics](https://img.shields.io/badge/Data%20Analytics-4B8BBE?style=for-the-badge)
-![SaaS Analytics](https://img.shields.io/badge/SaaS%20Analytics-800000?style=for-the-badge)
-
----
-
-## 🖼️ **Dashboard Preview**
+```md
+# 📊 StreamVerse — SaaS Customer Churn & Revenue Analytics Dashboard
 
 ![Dashboard Preview](assets/StreamVerse_Dashboard.png)
 
----
+A complete end-to-end SaaS analytics project covering churn modeling, revenue forecasting, customer behavior analysis, and interactive dashboard development using **Power BI, Excel, DAX, and SQL-style logic**.
 
-## 📌 **Overview**
-
-StreamVerse is a fictional SaaS streaming service created to simulate real-world subscription analytics.
-This project tracks **churn rates**, **revenue trends**, and **customer retention** over a 12-month period using Excel + Power BI.
-
-The goal is to understand:
-
-* Why customers churn
-* How churn affects revenue
-* Which customer segments have the highest lifetime value
-* How subscription behavior evolves over time
-
-This dashboard follows the same structure used by BI teams at streaming companies, SaaS products, and finance/actuarial analytics teams.
+This project is designed to mirror the analytical style used by real SaaS companies and is optimized for recruiters, hiring managers, and data teams reviewing my portfolio.
 
 ---
 
-## ⭐ **Key Dashboard Features**
+## 🔥 Key Features
 
-* 📉 **Churn Rate by Month** (Month 1 spike → stabilization)
-* 👥 **Active Customers vs Cancels** (dual-axis trend)
-* 💵 **Monthly Recurring Revenue (MRR)**
-* 🌍 **Segmentation Filters** (Region, Plan Type, Has Kids)
-* 📊 **LTV & ARPU** calculated dynamically
-* 🔍 Interactive, filter-driven data exploration
-
----
-
-## 📂 **Dataset Description**
-
-The Excel dataset simulates **50,000+ subscription customers**, each tracked across a 12-month lifecycle.
-
-### **Key fields include:**
-
-| Column        | Description                            |
-| ------------- | -------------------------------------- |
-| Customer_ID   | Unique customer identifier             |
-| Month_Index   | Month of subscription lifecycle (1–12) |
-| Plan_Type     | Basic / Standard / Premium             |
-| Region        | NA / EU / APAC / LATAM                 |
-| Monthly_Price | Plan cost                              |
-| Churn_Flag    | 1 if customer churns that month        |
-| Is_Active     | 1 if subscribed that month             |
-| Has_Kids      | Yes/No segmentation field              |
-| MRR           | Monthly Recurring Revenue              |
-
-The dataset reflects realistic SaaS behavior (high early churn → stable retention).
+✔ **Full SaaS KPI Suite:** Churn Rate, MRR, ARR, LTV, ARPU  
+✔ **Month-by-Month cohort behavior**  
+✔ **Dynamic Power BI dashboard with slicers**  
+✔ **Excel-based data model & DAX formulas**  
+✔ **Churn curve visualization**  
+✔ **Active customers vs cancellations trend**  
+✔ **MRR growth and cohort revenue trajectory**  
+✔ **Complete business explanations for each metric**  
+✔ **Real-world SaaS story framing for recruiters**
 
 ---
 
-## 🔧 **How This Project Was Built**
+## 🚀 Project Purpose
 
-### **1. Data Generation (Excel)**
+The goal of StreamVerse is to simulate how a subscription-based business tracks and understands customer retention and revenue behavior.  
+This project demonstrates:
 
-* Created synthetic user profiles
-* Assigned plans, regions, and add-ons
-* Simulated churn behavior using probability decay
-* Calculated revenue, active status, and churn flags
-
-### **2. Data Modeling (Power BI)**
-
-* Loaded Excel dataset into Power BI
-* Established a clean star-schema model
-* Created dimension tables (Plan, Region, Add-Ons)
-
-### **3. DAX Measures**
-
-* Computed Active Customers, Cancels, Churn %, MRR, ARPU, LTV
-* Validated measure accuracy against data logic
-
-### **4. Dashboard Design**
-
-* Built clean visuals with consistent formatting
-* Added slicers for Region, Plan Type, and Kids addon
-* Designed professional KPI cards and charts
+- Strong analytical thinking  
+- Ability to build end-to-end BI solutions  
+- Business-oriented storytelling  
+- Technical proficiency in DAX, Excel modeling, and visualization  
+- Understanding of SaaS metrics used in finance, product, and data teams  
 
 ---
 
-## 📊 **KPI Definitions (DAX)**
+# 🧩 1. Dataset Overview
 
-### **Churn Rate (%)**
+**Rows:** 4,536  
+**Columns include:**  
+- Customer_ID  
+- Region (APAC, EU, LATAM, NA)  
+- Plan_Type (Basic, Standard, Premium)  
+- Has_Kids (Yes/No)  
+- Month_Index (1–12)  
+- Monthly_Price  
+- Churn_Flag  
+- Active_Customers  
+- Cancellations  
+- MRR, LTV, ARPU  
+- Randomized modifiers for realism
+
+This dataset was generated using business-driven assumptions to mimic a real SaaS platform's behavior.
+
+---
+
+# 📈 2. KPIs and Business Meaning
+
+### **🟦 Active Customers**
+Total customers still subscribed in the current period.
+
+### **🟥 Cancellations**
+Customers who churned / stopped paying.
+
+### **🟩 MRR — Monthly Recurring Revenue**
+Revenue generated from active customers in a given month.
+
+### **🟨 Churn Rate (%)**
+Percentage of customers who cancel.
+
+Formula:
+```
+
+Churn Rate = Cancels / Active Customers
+
+```
+
+### **🟧 LTV — Lifetime Value**
+Expected revenue per customer over their tenure.
+
+Formula:
+```
+
+LTV = ARPU / Churn Rate
+
+````
+
+### **🟪 ARPU — Average Revenue Per User**
+Total revenue / total users.
+
+---
+
+# 🛠️ 3. Tech Stack
+
+### **BI & Visualization**
+- Power BI  
+- DAX  
+- Power Query  
+
+### **Data Modeling**
+- Excel  
+- Pivot modeling  
+- Subscription simulation logic  
+
+### **Project Management**
+- GitHub  
+- Documentation  
+- Version control  
+
+---
+
+# 🧠 4. How the Project Was Built (Step-by-Step)
+
+### **1. Simulated SaaS Dataset (Excel)**
+- Built price tiers  
+- Applied churn multipliers per region, plan type, add-ons  
+- Generated Month_Index progression  
+- Added realistic churn and retention patterns  
+- Created revenue formulas and KPIs
+
+### **2. Imported Into Power BI**
+- Cleaned data  
+- Created relationships  
+- Converted flags to measures  
+
+### **3. Built DAX Measures**
+Examples:
 
 ```DAX
-Churn_Pct =
-DIVIDE([Cancels], [Active_Customers])
-```
-
-### **Active Customers**
+Churn_Pct = DIVIDE([Cancels], [Active_Customers])
+````
 
 ```DAX
-Active_Customers =
-SUM(Fact_Monthly[Is_Active])
+MRR_Monthly = SUM(Fact_Monthly[Revenue])
 ```
 
-### **Cancelations**
-
 ```DAX
-Cancels =
-SUM(Fact_Monthly[Churn_Flag])
+LTV = DIVIDE([ARPU], [Churn_Pct])
 ```
 
-### **MRR**
+### **4. Designed Power BI Dashboard**
 
-```DAX
-MRR_Monthly =
-SUM(Fact_Monthly[MRR])
+* Churn trend line
+* Active customers vs cancels combined chart
+* MRR growth area chart
+* Slicers for demographic segmentation
+
+### **5. Exported Dashboard Image**
+
+Used as project preview and GitHub social thumbnail.
+
+---
+
+# 🎨 5. Visuals Included
+
+This README includes:
+
+✔ Dashboard Preview
+✔ KPI Cards
+✔ Churn Curve
+✔ MRR Growth Chart
+✔ Active Customers vs Cancels
+
+Screenshots stored in:
+
 ```
-
-### **ARPU**
-
-```DAX
-ARPU =
-DIVIDE([MRR], [Active_Customers])
-```
-
-### **Lifetime Value**
-
-```DAX
-LTV =
-DIVIDE([ARPU], [Churn_Pct])
+/assets/StreamVerse_Dashboard.png
 ```
 
 ---
 
-## 🔍 **Dashboard Insights**
+# 📌 6. Project Insights & Summary
 
-* ⚠️ **Churn peaks heavily in Month 1**, then drops sharply
-* 📈 **MRR increases each month**, despite churn
-* 🏆 **Premium subscribers churn far less** than Basic customers
-* 🌍 **EU & NA regions show the best retention**
-* 👪 **Customers with Kids add-on have longer subscription lifetimes**
+### 🔹 **Churn naturally declines over time**
 
----
+Month 1 shows the highest churn (60%+), then stabilizes below 10%.
 
-## 📦 **Download the Files**
+### 🔹 **Active customer base steadily grows**
 
-* 📊 **Power BI Dashboard (.pbix)**
-* 📈 **Excel Dataset (Simulated)**
+Even with churn, new cohorts create growth.
 
-Both included in this repository:
+### 🔹 **MRR shows strong upward momentum**
 
-```
-StreamVerse_SaaS_ChurnDashboard.pbix
-StreamVerse_ChurnProject.xlsx
-assets/StreamVerse_Dashboard.png
-```
+Revenue grows as churn stabilizes and customer base expands.
+
+### 🔹 **Premium plans show lower churn + higher revenue**
+
+Simulating typical SaaS behavior.
 
 ---
 
-## 🚀 **Future Enhancements**
+# 💼 7. Resume-Ready Impact Statement
 
-* Predictive churn model (Logistic Regression / XGBoost)
-* Cohort retention dashboard
-* CAC & NRR calculations
-* SQL + cloud data warehouse version (Snowflake/BigQuery)
+**"Built a complete SaaS churn and revenue analytics system using Excel, Power BI, and DAX. Developed cohort-based churn trends, MRR forecasting logic, LTV modeling, and interactive dashboards with demographic segmentation. Demonstrates strong skills in BI reporting, metric design, and data-driven storytelling—mirroring analytics workflows used in real SaaS companies."**
+
+You can paste this into your resume under Projects.
 
 ---
 
-## 🎯 **What This Project Demonstrates**
+# 🌐 8. Links
+
+### 🔗 **Live Portfolio Website**
+
+[https://brianbuchanan-official.github.io/](https://brianbuchanan-official.github.io/)
+
+### 🔗 **LinkedIn Profile**
+
+[https://www.linkedin.com/in/brian-buchanan-616727224/](https://www.linkedin.com/in/brian-buchanan-616727224/)
+
+---
+
+# 🧩 9. Files in This Repository
+
+| File                                     | Description             |
+| ---------------------------------------- | ----------------------- |
+| **StreamVerse_ChurnProject.xlsx**        | Full Excel data model   |
+| **StreamVerse_SaaS_ChurnDashboard.pbix** | Power BI dashboard      |
+| **StreamVerse_Dashboard.png**            | Dashboard preview image |
+| **README.md**                            | Project documentation   |
+
+---
+
+# 🔥 10. Recruiter-Friendly Summary (TL;DR)
 
 This project shows:
 
-* End-to-end analytics workflow
-* SaaS business metric understanding
-* Strong Power BI and DAX skills
-* Ability to model customer behavior
-* Dashboard design + storytelling
-* Skills directly applicable to **data analyst**, **BI analyst**, **actuarial**, and **financial analytics** roles
+✔ Strong BI & analytics skills
+✔ SaaS metric expertise
+✔ Dashboard design + storytelling
+✔ Data modeling & DAX proficiency
+✔ End-to-end problem-solving
+✔ Real-world business thinking
+
+Exactly what analytics, finance, and tech hiring managers are looking for.
 
 ---
 
-## 👤 **Contact**
+# ⭐ 11. Future Enhancements
 
-Connect with me for analytics, BI, finance, or actuarial roles:
-
-🔗 **LinkedIn:** [https://www.linkedin.com/in/brian-buchanan-616727224/](https://www.linkedin.com/in/brian-buchanan-616727224/)
-🌐 **Portfolio:** [https://brianbuchanan-official.github.io/](https://brianbuchanan-official.github.io/)
+* Add SQL database migration
+* Build Python simulator for more realistic cohort modeling
+* Add Net Revenue Retention (NRR) + Gross Revenue Retention (GRR)
+* Export dashboard to interactive web embed
 
 ---
 
+# 📬 Contact
+
+If you'd like to discuss this project or the analytics behind it:
+
+* **LinkedIn:** [https://www.linkedin.com/in/brian-buchanan-616727224/](https://www.linkedin.com/in/brian-buchanan-616727224/)
+* **Portfolio Website:** [https://brianbuchanan-official.github.io/](https://brianbuchanan-official.github.io/)
+
+(No email displayed publicly for privacy.)
+
+---
