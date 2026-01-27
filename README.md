@@ -1,212 +1,99 @@
-# 📊 StreamVerse — SaaS Customer Churn & Revenue Analytics Dashboard
+# StreamVerse — SaaS Customer Churn & Revenue Analytics
 
-![Dashboard Preview](assets/StreamVerse_Dashboard.png)
+## Executive Summary
 
-A complete end-to-end SaaS analytics project covering churn modeling, revenue forecasting, customer behavior analysis, and interactive dashboard development using Power BI, Excel, DAX, and SQL-style logic.
+Subscription-based businesses depend on retention and recurring revenue stability to sustain growth. This project evaluates customer churn behavior, revenue dynamics, and cohort performance using a simulated SaaS dataset, translating raw subscription activity into decision-ready KPIs and executive dashboards. The analysis is designed to support retention strategy, pricing evaluation, and revenue forecasting decisions.
 
----
-
-## 🔥 Key Features
-
-* Full SaaS KPI Suite: Churn Rate, MRR, ARR, LTV, ARPU
-* Month-by-Month cohort behavior
-* Dynamic Power BI dashboard with slicers
-* Excel-based data model and DAX formulas
-* Churn curve visualization
-* Active customers vs cancellations trend
-* MRR growth and cohort revenue trajectory
-* Clear business explanations for each metric
-* Recruiter-friendly SaaS storytelling
+**Scope (Locked):**
+- Monthly churn analysis (12-month horizon)
+- KPI focus: Churn Rate, MRR, ARR, ARPU, LTV
+- Cohort-based customer behavior
+- Region and plan segmentation
+- Tools: Excel (data model) + Power BI (executive dashboard)
+- Simulated dataset reflecting real SaaS operating behavior
 
 ---
 
-## 🚀 Project Purpose
+## Deliverables
 
-StreamVerse simulates how a subscription business tracks retention and revenue.
-This project demonstrates:
+- **Excel Model:**  
+  `StreamVerse_ChurnProject.xlsx`
 
-* Analytical thinking
-* End-to-end BI workflow skills
-* Data modeling and DAX proficiency
-* Ability to build dashboards and interpret SaaS metrics
-* Real-world business storytelling
+- **Power BI Dashboard:**  
+  `StreamVerse_SaaS_ChurnDashboard.pbix`
 
----
-
-## 🧩 Dataset Overview
-
-**Rows:** 4,536
-**Columns include:**
-
-* Customer_ID
-* Region (APAC, EU, LATAM, NA)
-* Plan_Type (Basic, Standard, Premium)
-* Has_Kids
-* Month_Index (1–12)
-* Monthly_Price
-* Churn_Flag
-* Active_Customers
-* Cancellations
-* MRR, LTV, ARPU
-
-Dataset was generated with business-driven assumptions to mimic real SaaS behavior.
+- **Executive Dashboard Preview:**  
+  `assets/StreamVerse_Dashboard.png`
 
 ---
 
-## 📈 KPIs & Business Meaning
+## Executive KPI Overview (Power BI Dashboard)
 
-### Active Customers
-
-Total customers still subscribed in the period.
-
-### Cancellations
-
-Customers who churned.
-
-### MRR — Monthly Recurring Revenue
-
-Revenue from active subscribers.
-
-### Churn Rate
-
-```
-Churn Rate = Cancels / Active Customers
-```
-
-### LTV — Lifetime Value
-
-```
-LTV = ARPU / Churn Rate
-```
-
-### ARPU — Average Revenue Per User
-
-Total revenue divided by total customers.
+![StreamVerse Executive Dashboard](assets/StreamVerse_Dashboard.png)
 
 ---
 
-## 🛠️ Tech Stack
+## Business Problem
 
-**BI & Visualization**
+Recurring revenue businesses must manage churn proactively to protect growth and long-term customer value. Revenue expansion alone does not guarantee sustainability if customer attrition erodes the active base or compresses lifetime value.
 
-* Power BI
-* DAX
-* Power Query
-
-**Data Modeling**
-
-* Excel
-* Pivot tables
-* Subscription simulation logic
-
-**Version Control**
-
-* GitHub
-* Documentation
+**Executive Question:**  
+**How do churn patterns, customer cohorts, and pricing tiers affect revenue stability and long-term customer value?**
 
 ---
 
-## 🧠 Build Process (Step-by-Step)
+## Key Performance Indicators (KPIs)
 
-### 1. Simulated Dataset (Excel)
-
-* Created pricing tiers
-* Applied churn modifiers
-* Generated Month_Index
-* Added churn and retention patterns
-* Calculated revenue KPIs
-
-### 2. Imported Into Power BI
-
-* Cleaned and shaped data
-* Created relationships
-* Converted columns into measures
-
-### 3. Created DAX Measures
-
-Examples:
-
-```DAX
-Churn_Pct = DIVIDE([Cancels], [Active_Customers])
-```
-
-```DAX
-MRR_Monthly = SUM(Fact_Monthly[Revenue])
-```
-
-```DAX
-LTV = DIVIDE([ARPU], [Churn_Pct])
-```
-
-### 4. Built Power BI Dashboard
-
-* Churn trend lines
-* Active vs Cancels visualization
-* MRR growth
-* Demographic slicers
-
-### 5. Exported Dashboard Image
-
-Saved for project preview.
+- Active Customers  
+- Cancellations  
+- Churn Rate  
+- Monthly Recurring Revenue (MRR)  
+- Annual Recurring Revenue (ARR)  
+- Average Revenue per User (ARPU)  
+- Lifetime Value (LTV)
 
 ---
 
-## 🎨 Visuals Included
+## Data & Methodology
 
-* Dashboard Preview
-* KPI Cards
-* Churn Curve
-* MRR Growth
-* Active vs Cancels
+The dataset consists of **4,536 simulated customer-month observations** across a 12-month lifecycle. Customers are segmented by region, subscription tier, and product attributes. Churn behavior is introduced through structured assumptions reflecting early-life churn, cohort stabilization, and tier-based retention differences.
 
-Images stored in:
-
-```
-/assets/StreamVerse_Dashboard.png
-```
+Revenue metrics are calculated at the monthly level and aggregated using Power BI measures. Churn rate is computed as cancellations divided by active customers. Lifetime value is estimated using a steady-state churn assumption.
 
 ---
 
-## 📌 Insights & Summary
+## Key Findings
 
-* Churn peaks in Month 1 then normalizes
-* Active customer base grows steadily
-* MRR increases as churn stabilizes
-* Premium users churn less and contribute more revenue
-
----
-
-## 💼 Resume-Ready Statement
-
-**Built a complete SaaS churn and revenue analytics system using Excel, Power BI, and DAX. Designed cohort-based churn modeling, MRR forecasting, LTV calculations, and interactive dashboards. Demonstrates strong BI reporting skills and real SaaS analytics expertise.**
+- Churn is highest during early subscription periods and stabilizes over time.
+- Premium-tier customers exhibit lower churn and higher lifetime value.
+- Revenue growth is driven more by retention stability than raw customer acquisition.
+- Cohort analysis reveals materially different revenue trajectories across customer segments.
 
 ---
 
-## 🌐 Links
+## Recommendations
 
-**Portfolio Website:**
-[https://brianbuchanan-official.github.io/](https://brianbuchanan-official.github.io/)
-
-**LinkedIn:**
-[https://www.linkedin.com/in/brian-buchanan-616727224/](https://www.linkedin.com/in/brian-buchanan-616727224/)
-
----
-
-## 📂 Files Included
-
-| File                                 | Description        |
-| ------------------------------------ | ------------------ |
-| StreamVerse_ChurnProject.xlsx        | Excel model        |
-| StreamVerse_SaaS_ChurnDashboard.pbix | Power BI dashboard |
-| StreamVerse_Dashboard.png            | Dashboard preview  |
-| README.md                            | Documentation      |
+- Prioritize early-life retention initiatives to reduce first-period churn.
+- Focus pricing and feature investment on higher-retention tiers.
+- Monitor cohort-level churn rather than relying solely on aggregate metrics.
+- Use churn-adjusted LTV as a primary input for marketing and acquisition strategy.
 
 ---
 
-## ⭐ Future Enhancements
+## Next Steps (Write-Up Only)
 
-* SQL database migration
-* Python-based cohort simulation
-* Add NRR and GRR metrics
-* Create embedded interactive web version
+- Migrate the dataset to a relational SQL database for scalable analysis.
+- Introduce Net Revenue Retention (NRR) and Gross Revenue Retention (GRR).
+- Extend cohort modeling using Python for probabilistic churn simulation.
+- Embed dashboard views into a web-based analytics interface.
 
+---
+
+## Files Included
+
+| File                                 | Description              |
+|-------------------------------------|--------------------------|
+| StreamVerse_ChurnProject.xlsx        | Excel data model         |
+| StreamVerse_SaaS_ChurnDashboard.pbix | Power BI dashboard       |
+| assets/StreamVerse_Dashboard.png    | Executive dashboard view |
+| README.md                            | Project documentation   |
